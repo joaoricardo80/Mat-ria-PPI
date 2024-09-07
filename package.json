@@ -1,0 +1,24 @@
+{
+  "name": "mat-ria-ppi",
+  "version": "1.0.0",
+  "description": "Atividades PPI",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaoricardo80/Mat-ria-PPI.git"
+  },
+  "author": "Joao Ricardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaoricardo80/Mat-ria-PPI/issues"
+  },
+  "homepage": "https://github.com/joaoricardo80/Mat-ria-PPI#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  }
+}
