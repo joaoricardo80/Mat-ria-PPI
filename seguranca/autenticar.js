@@ -4,7 +4,7 @@ export default function autenticar(requisicao, resposta){
     
     if(usuario == 'admin' && senha == 'admin'){
         requisicao.session.autenticado = true;
-        resposta.redirect('/menu.html');
+        resposta.redirect('/eventos.html');
     }
     else{
         resposta.write('<html>');
@@ -19,12 +19,15 @@ export default function autenticar(requisicao, resposta){
         resposta.write('</html>');
         resposta.end();
     }
+
+    
 }
+
 
 export function verificarAutenticacao(requisicao, resposta, next){
     
     if (requisicao.session.autenticado != undefined && requisicao.session.autenticado) {
-        executarProximoPasso();
+        next();
     }
     else
     {
@@ -36,3 +39,4 @@ export function sair(requisicao, resposta){
     requisicao.session.autenticado = undefined;
     resposta.redirect('/login.html');
 }
+

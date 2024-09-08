@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Evento - Show da Banda XYZ</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Show da Banda XYZ</h1>
+        <p><strong>Data:</strong> 15 de setembro de 2024</p>
+        <p><strong>Local:</strong> Auditório Principal</p>
+        <p><strong>Horário:</strong> 20:00</p>
+        <p><strong>Descrição:</strong> Um show incrível com a banda XYZ, trazendo os maiores sucessos do rock.</p>
+        <p><strong>Preço:</strong> R$ 100,00</p>
+        <p><strong>Quantidade de Ingressos Disponíveis:</strong> 100</p>
+    </div>
+    <div class="ingressos">
+        <label for="quantidade">Quantidade de Ingressos:</label>
+        <button class="btn" onclick="alterarQuantidade(-1)">-</button>
+        <input type="number" id="quantidade" value="1" min="1" readonly>
+        <button class="btn" onclick="alterarQuantidade(1)">+</button>
+        <p><strong>Total:</strong> R$ <span id="valorTotal">100.00</span></p>
+        <a class="btn" href="./eventos.html">Voltar</a>
+        <button type="button" class="btn btn-primary" id="btn_comprar" onclick="comprar()">COMPRAR</button> 
+    </div>
+</div>
+
+<script>
+    const precoIngresso = 100.00; // Preço de cada ingresso
+
+    // Função para alterar a quantidade de ingressos
+    function alterarQuantidade(mudanca) {
+        const quantidadeInput = document.getElementById('quantidade');
+        let quantidadeAtual = parseInt(quantidadeInput.value);
+        quantidadeAtual += mudanca;
+
+        // Verifica se a quantidade é menor que 1
+        if (quantidadeAtual < 1) {
+            quantidadeAtual = 1;
+        }
+
+        quantidadeInput.value = quantidadeAtual;
+        atualizarValorTotal(quantidadeAtual);
+    }
+
+    // Função para atualizar o valor total
+    function atualizarValorTotal(quantidade) {
+        const valorTotalElement = document.getElementById('valorTotal');
+        const valorTotal = (quantidade * precoIngresso).toFixed(2);
+        valorTotalElement.textContent = valorTotal;
+    }
+    function comprar(comprar){
+        alert('Compra feita com sucesso!');
+        
+        
+    }
+</script>
+</body>
+</html>
